@@ -8,8 +8,7 @@ export default function FortuneTeller()
     const [fortune, setFortune] = useState('');
     const [isPredicting, setIsPredicting] = useState(false);
 
-    const gods = ["Zeus", "Hermes", "Ares", "Aphrodite", "Apollo", "Poseidon"];
-
+    const characters = ["Shrek", "Donkey", "Fiona", "PussInBoots", "LordFarquaad"];
     const handleSelectGod = (god) =>
     {
         setSelectedGod(god);
@@ -58,7 +57,7 @@ export default function FortuneTeller()
                 <p className="text-pink-600 mt-2">Choose a Greek God to reveal your romantic fate 💕</p>
 
                 <div className="flex flex-wrap justify-center gap-3 mt-6">
-                    {gods.map((god) => (
+                    {characters.map((god) => (
                         <button
                             key={god}
                             onClick={() => handleSelectGod(god)}
