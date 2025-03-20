@@ -5,9 +5,9 @@ export default function HomePage()
 {
     return (
         <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-green-500 via-lime-400 to-teal-500 text-white text-center p-6">
-            <h1 className="text-5xl font-bold mb-6 drop-shadow-lg animate-pulse"> 💚Shrek-YourOgreBae 💚</h1>
+            <h1 className="text-5xl font-bold mb-6 drop-shadow-lg animate-pulse"> 💚 Shrek: Your Ogre Bae 💚</h1>
             <p className="text-lg max-w-xl mb-8">
-                Love isn’t just for fairy tales! 💕 With <span className="font-bold">Shrek-YourOgreBae</span>,
+                Love isn’t just for fairy tales! 💕 With <span className="font-bold">Shrek: Your Ogre Bae</span>,
                 chat with your ogre companion, test your skills in <span className="italic">Hangman: Swamp Edition</span>, or unveil your swampy love fortune! 💚✨
             </p>
 
@@ -16,7 +16,7 @@ export default function HomePage()
                     to="/chat"
                     className="bg-white text-green-600 px-6 py-3 text-lg font-semibold rounded-xl shadow-md transition-all duration-300 hover:bg-green-200 hover:scale-105"
                 >
-                    💬 Chat with Shrek
+                    💬 Pick & Chat
                 </Link>
                 <Link
                     to="/minigame"
