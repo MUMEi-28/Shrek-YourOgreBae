@@ -2,25 +2,25 @@ import React, { useState } from 'react';
 import fortuneMessages from '../../data/fortuneTeller/fortuneMessages';
 import { Link } from 'react-router-dom';
 
-export default function FortuneTeller()
+export default function ShrekFortuneTeller()
 {
-    const [selectedGod, setSelectedGod] = useState(null);
+    const [selectedCharacter, setSelectedCharacter] = useState(null);
     const [fortune, setFortune] = useState('');
     const [isPredicting, setIsPredicting] = useState(false);
 
-    const gods = ["Zeus", "Hermes", "Ares", "Aphrodite", "Apollo", "Poseidon"];
+    const characters = ["Shrek", "Donkey", "Fiona", "Puss in Boots", "Lord Farquaad", "Dragon"];
 
-    const handleSelectGod = (god) =>
+    const handleSelectCharacter = (character) =>
     {
-        setSelectedGod(god);
-        setFortune(''); // Reset fortune when selecting a new god
+        setSelectedCharacter(character);
+        //   setFortune(''); // Reset fortune when selecting a new character
     };
 
     const handlePredictFortune = () =>
     {
-        if (!selectedGod)
+        if (!selectedCharacter)
         {
-            setFortune("Please choose a Greek god first!");
+            setFortune("Please choose a Shrek character first!");
             return;
         }
 
@@ -28,7 +28,7 @@ export default function FortuneTeller()
 
         setTimeout(() =>
         {
-            const messages = fortuneMessages[selectedGod];
+            const messages = fortuneMessages[selectedCharacter];
 
             if (messages && messages.length > 0)
             {
@@ -36,7 +36,7 @@ export default function FortuneTeller()
                 setFortune(randomFortune);
             } else
             {
-                setFortune("No fortunes available for this god yet.");
+                setFortune("No fortunes available for this character yet.");
             }
 
             setIsPredicting(false);
@@ -44,57 +44,48 @@ export default function FortuneTeller()
     };
 
     return (
-
-        <div className='bg-[#74617a] min-h-screen flex flex-col items-center justify-center relative'>
-            <div className="p-8 max-w-lg mx-auto text-center bg-pink-100 shadow-xl rounded-lg border border-pink-300 relative">
+        <div className='bg-[#4b8e4b] min-h-screen flex flex-col items-center justify-center relative'>
+            <div className="p-8 max-w-lg mx-auto text-center bg-green-200 shadow-xl rounded-lg border border-green-400 relative">
                 {/* Decorative Elements */}
                 <div className="absolute top-0 left-0 right-0 flex justify-center -mt-8">
-                    <span className="text-4xl">💖🔮💖</span>
+                    <span className="text-4xl">🧅✨🧅</span>
                 </div>
 
-
-
-                <h1 className="text-4xl font-bold text-pink-700">Love Fortune Teller</h1>
-                <p className="text-pink-600 mt-2">Choose a Greek God to reveal your romantic fate 💕</p>
+                <h1 className="text-4xl font-bold text-green-800">Shrek Fortune Teller</h1>
+                <p className="text-green-700 mt-2">Choose a character to reveal your fate in the Swamp of Love 💚</p>
 
                 <div className="flex flex-wrap justify-center gap-3 mt-6">
-                    {gods.map((god) => (
+                    {characters.map((character) => (
                         <button
-                            key={god}
-                            onClick={() => handleSelectGod(god)}
-                            className={`px-5 py-2 rounded-full font-semibold transition duration-300 border shadow-md text-pink-900 bg-pink-200 hover:bg-pink-300 hover:text-white ${selectedGod === god ? 'bg-pink-500 text-white' : ''
-                                }`}
+                            key={character}
+                            onClick={() => handleSelectCharacter(character)}
+                            className={`px-5 py-2 rounded-full font-semibold transition duration-300 border shadow-md text-green-900 bg-green-300 hover:bg-green-400 hover:text-white ${selectedCharacter === character ? 'bg-green-600 text-white' : ''}`}
                         >
-                            {god}
+                            {character}
                         </button>
                     ))}
                 </div>
+
                 <div className='flex flex-col justify-center items-center gap-3'>
                     <button
                         onClick={handlePredictFortune}
-                        className={`mt-6 px-8 py-3 font-bold rounded-full transition duration-300 shadow-lg ${isPredicting ? 'bg-gray-400 cursor-not-allowed' : 'bg-red-500 hover:bg-red-600'
-                            } text-white`}
+                        className={`mt-6 px-8 py-3 font-bold rounded-full transition duration-300 shadow-lg ${isPredicting ? 'bg-gray-400 cursor-not-allowed' : 'bg-yellow-500 hover:bg-yellow-600'} text-white`}
                         disabled={isPredicting}
                     >
-                        {isPredicting ? 'Predicting...' : '💘 Reveal My Fortune 💘'}
+                        {isPredicting ? 'Predicting...' : '🧅 Reveal My Swamp Fate 🧅'}
                     </button>
 
-                    <button className=" px-8 py-3 font-bold rounded-full transition duration-300 shadow-lg bg-blue-500 hover:bg-blue-600 text-white"><Link to='..'>Go Back</Link>
+                    <button className="px-8 py-3 font-bold rounded-full transition duration-300 shadow-lg bg-blue-500 hover:bg-blue-600 text-white">
+                        <Link to='..'>Go Back</Link>
                     </button>
-
-
                 </div>
-
-
             </div>
-            {
-                fortune && (
-                    <p className=" mt-6 text-xl font-semibold text-pink-800 italic transition-opacity duration-500 bg-white p-4 rounded-lg shadow-md border border-pink-300">
-                        "{fortune}"
-                    </p>
-                )
-            }
-        </div >
 
+            {fortune && (
+                <p className="mt-6 text-xl font-semibold text-green-900 italic transition-opacity duration-500 bg-white p-4 rounded-lg shadow-md border border-green-400 max-w-2xl text-center">
+                    "{fortune}"
+                </p>
+            )}
+        </div>
     );
 }
