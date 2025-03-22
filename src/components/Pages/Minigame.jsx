@@ -149,7 +149,7 @@ export default function Minigame()
                             </button>
                         </div>
                     )}
-                    <Link to='..'>
+                    <Link to='..'>z
                         <button className='cursor-pointer bg-[#4CAF50] text-white py-3 px-6 rounded-md border border-white mt-4'>Back</button>
                     </Link>
                 </div>

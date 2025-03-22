@@ -21,7 +21,7 @@ export default function CharacterCard(props)
                 {/* Close Button */}
                 <button
                     onClick={props.handleBackClick}
-                    className="absolute bg-red-500 py-2 px-4 text-lg rounded-full font-bold text-white right-[-1rem] top-[-1rem] hover:bg-red-600 transition-all duration-200">
+                    className="cursor-pointer absolute bg-red-500 py-2 px-4 text-lg rounded-full font-bold text-white right-[-1rem] top-[-1rem] hover:bg-red-600 transition-all duration-200">
                     X
                 </button>
 
@@ -59,7 +59,8 @@ export default function CharacterCard(props)
             {/* <Link to="/chat"> */}
             <button
                 onClick={() => handleChatClick()}
-                className="bg-green-500 px-8 py-3 text-lg font-bold text-white rounded-full mt-12 hover:bg-green-600 transition-all duration-200">
+
+                className="bg-green-500 px-8 py-3 text-lg font-bold cursor-pointer text-white rounded-full mt-12 hover:bg-green-600 transition-all duration-200">
                 Chat with {props.character.name}
             </button>
             {/* </Link> */}
