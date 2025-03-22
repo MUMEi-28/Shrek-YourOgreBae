@@ -4,13 +4,19 @@ import Reply from '../chat/Reply';
 import SendMessage from '../chat/SendMessage';
 import { conversationData } from '../../data/chat/conversationData';
 import { useState, useEffect, useRef } from 'react';
-import { getResponseFromMistral } from "../../data/chat/ai";
-import { Link, useLocation } from 'react-router-dom';
 
-export default function AphroditeChat()
+
+import { getResponseFromMistral } from "../../data/chat/ai"
+
+import React from 'react'
+import { Link, useLocation } from 'react-router-dom'
+
+
+export default function Chat()
 {
     const location = useLocation();
     const selectedCharacter = location.state?.character || "Shrek";
+
 
     const [conversation, setConversation] = useState(conversationData);
     const [initialGreetingAdded, setInitialGreetingAdded] = useState(false);
@@ -84,7 +90,9 @@ export default function AphroditeChat()
     {
         try
         {
+
             const aiResponse = await getResponseFromMistral(userMessage, selectedCharacter);
+
 
             setConversation(prevConvo => prevConvo.map((msg, index) =>
                 index === prevConvo.length - 1
@@ -105,11 +113,13 @@ export default function AphroditeChat()
     }
 
     return (
+
         <div className='absolute min-w-screen min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-green-900 to-green-700 p-6'>
             {/* Chat Container */}
             <section className="border bg-yellow-100 w-96 h-[600px] flex flex-col shadow-xl rounded-2xl overflow-hidden">
                 {/* Header */}
                 <header className="bg-gradient-to-r from-green-800 to-green-600 text-white p-4 flex items-center justify-center text-2xl font-bold">
+
                     <h1>{selectedCharacter}</h1>
                 </header>
 

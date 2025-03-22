@@ -93,8 +93,10 @@ export default function Characters()
                     </div>
                 </div>
 
+
                 <Link to='..' className='bg-pink-100 text-2xl px-8 py-3 rounded-2xl mt-12 hover:bg-orange-400'>
                     <button >Back</button>
+
                 </Link>
             </div >
         </>

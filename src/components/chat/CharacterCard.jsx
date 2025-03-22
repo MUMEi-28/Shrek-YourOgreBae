@@ -59,6 +59,7 @@ export default function CharacterCard(props)
             {/* <Link to="/chat"> */}
             <button
                 onClick={() => handleChatClick()}
+
                 className="bg-green-500 px-8 py-3 text-lg font-bold cursor-pointer text-white rounded-full mt-12 hover:bg-green-600 transition-all duration-200">
                 Chat with {props.character.name}
             </button>
