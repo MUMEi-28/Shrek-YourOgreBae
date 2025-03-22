@@ -10,10 +10,14 @@ import { useState, useEffect, useRef } from 'react';
 import { getResponseFromMistral } from "../../data/chat/ai"
 
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
-export default function AphroditeChat()
+export default function Chat()
 {
+    const location = useLocation();
+    const selectedCharacter = location.state?.character || "Shrek";
+
+
     const [conversation, setConversation] = useState(conversationData);
     const [initialGreetingAdded, setInitialGreetingAdded] = useState(false);
 
@@ -86,7 +90,7 @@ export default function AphroditeChat()
     {
         try
         {
-            const aiResponse = await getResponseFromMistral(userMessage);
+            const aiResponse = await getResponseFromMistral(userMessage, characterName);
 
             setConversation(prevConvo => prevConvo.map((msg, index) =>
                 index === prevConvo.length - 1
@@ -111,8 +115,7 @@ export default function AphroditeChat()
         <div className='absolute min-w-screen min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-pink-600 via-purple-500 to-red-500'>
             <section className="border bg-white w-96 h-[600px] flex flex-col shadow-xl rounded-2xl overflow-hidden">
                 <header className="bg-gradient-to-r from-red-500 via-pink-500 to-purple-500 text-white p-4 flex items-center justify-center text-2xl font-bold">
-                    <h1>Aphrodite AI</h1>
-                    <box-icon name="bot" className="ml-2"></box-icon>
+                    <h1>{selectedCharacter}</h1>
                 </header>
                 <main className='flex flex-col flex-grow p-4 overflow-y-auto space-y-3'>
                     {conversation.map((convo, index) =>
