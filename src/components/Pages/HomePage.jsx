@@ -50,10 +50,11 @@ export default function HomePage()
                     </Link>
                     <Link
                         to="/fortune-teller"
-                        className="bg-white text-green-600 px-6 py-3 text-lg font-semibold rounded-xl shadow-md transition-all duration-300 hover:bg-green-200 hover:scale-105"
-                    >
-                        🔮 Reveal Your Swampy Fortune
+                        className=" bg-white text-green-600 px-6 py-3 text-lg font-semibold rounded-xl shadow-md transition-all duration-300 hover:bg-green-200 hover:scale-105"
+                    >🔮 Reveal Your Swampy Fortune
                     </Link>
+
+
                 </div>
             </div>
 
