@@ -18,10 +18,10 @@ export default function Characters()
 {
     const characterPairs = [
         { name1: "Shrek", img1: shrek, name2: "Fiona", img2: fiona },
-        { name1: "Donkey", img1: donkey, name2: "Dragon", img2: dragon },
-        { name1: "King Harold", img1: king, name2: "Queen Lillian", img2: queen },
         { name1: "Puss in Boots", img1: puss, name2: "Kitty Softpaws", img2: softpaws },
         { name1: "Suzy Sugar", img1: suzySugar, name2: "Gingerbread", img2: breadman },
+        { name1: "Donkey", img1: donkey, name2: "Dragon", img2: dragon },
+        { name1: "King Harold", img1: king, name2: "Queen Lillian", img2: queen },
     ];
 
     const [selectedCharacter, setSelectedCharacter] = useState(null);
@@ -93,8 +93,10 @@ export default function Characters()
                     </div>
                 </div>
 
-                <Link to='..'>
-                    <button className='bg-pink-100 text-2xl px-8 py-3 rounded-2xl mt-12 hover:bg-orange-400'>Back</button>
+
+                <Link to='..' className='bg-pink-100 text-2xl px-8 py-3 rounded-2xl mt-12 hover:bg-orange-400'>
+                    <button >Back</button>
+
                 </Link>
             </div >
         </>
