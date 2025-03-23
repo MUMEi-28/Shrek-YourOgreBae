@@ -16,6 +16,7 @@ export default function Chat()
 {
     const location = useLocation();
     const selectedCharacter = location.state?.character || "Shrek";
+    const loveInterest = location.state?.loveInterest || "Fiona"; // Default to "Fiona" if not provided
 
 
     const [conversation, setConversation] = useState(conversationData);
@@ -37,7 +38,7 @@ export default function Chat()
             {
                 try
                 {
-                    const initialGreeting = await getResponseFromMistral("This is the initial greeting, I want you to greet me and ask something");
+                    const initialGreeting = await getResponseFromMistral("This is the initial greeting, I want you to greet me and ask something", selectedCharacter, loveInterest);
                     setConversation(prevConvo => [
                         ...prevConvo,
                         { category: 'AI', message: initialGreeting || "Hi there! How can I make your day better today? 😊" }
@@ -91,12 +92,12 @@ export default function Chat()
         try
         {
 
-            const aiResponse = await getResponseFromMistral(userMessage, selectedCharacter);
+            const aiResponse = await getResponseFromMistral(userMessage, selectedCharacter, loveInterest);
 
 
             setConversation(prevConvo => prevConvo.map((msg, index) =>
                 index === prevConvo.length - 1
-                    ? { category: "AI", message: aiResponse || "I'm sorry, I couldn't generate a response." }
+                    ? { category: "AI", message: aiResponse || `Sorry, pal, but ${selectedCharacter}'s done talkin’! 👋` }
                     : msg
             ));
 

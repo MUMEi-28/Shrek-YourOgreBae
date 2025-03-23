@@ -9,10 +9,12 @@ export default function CharacterCard(props)
 
     function handleChatClick()
     {
+        const characterDetails = characterData.find((char) => char.name === props.character.name);
+        const loveInterest = characterDetails?.loveInterest || "Shrek";
 
-        navigate('/chat', { state: { character: props.character.name } });
+        navigate('/chat', { state: { character: props.character.name, loveInterest } });
 
-        console.log(props.character.name);
+        console.log(`Character: ${props.character.name}, Love Interest: ${loveInterest}`);
     }
 
     return (
