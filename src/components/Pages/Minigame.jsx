@@ -130,7 +130,7 @@ export default function Minigame()
                             return (
                                 <button
                                     key={index}
-                                    className={`py-2 px-4 ${colorStyle} text-white uppercase m-1 rounded-md border-[#e7e6e6] border-[1px] font-semibold cursor-pointer`}
+                                    className={`py-2 px-4 ${colorStyle} text-white uppercase m-1 rounded-md border-[#e7e6e6] border-[1px] font-semibold cursor-pointer hover:bg-lime-600`}
                                     onClick={() => onGuessLetter(letter)}
                                     disabled={isGameOver}
                                 >
@@ -150,7 +150,7 @@ export default function Minigame()
                         </div>
                     )}
                     <Link to='..'>
-                        <button className='cursor-pointer bg-[#4CAF50] text-white py-3 px-6 rounded-md border border-white mt-4'>Back</button>
+                        <button className='cursor-pointer bg-[#4CAF50] hover:bg-lime-500 text-white py-3 px-6 rounded-md border border-white mt-4'>Back</button>
                     </Link>
                 </div>
             </div>
