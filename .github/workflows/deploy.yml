@@ -1,0 +1,2 @@
+env:
+  VITE_HF_ACCESS_TOKEN: ${{ secrets.HUGGINGFACE_API_KEY }}
