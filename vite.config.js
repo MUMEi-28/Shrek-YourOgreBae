@@ -10,6 +10,6 @@ export default defineConfig({
   ],
   base: "/Shrek-YourOgreBae",
   define: {
-    'process.env.VITE_APP_AI': JSON.stringify(process.env.VITE_APP_AI)
+    'process.env.VITE_HF_ACCESS_TOKEN': JSON.stringify(process.env.VITE_HF_ACCESS_TOKEN)
   }
 })
