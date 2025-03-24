@@ -8,7 +8,7 @@ export default function HomePage()
         <div className="relative flex flex-col items-center justify-center min-h-screen text-white text-center p-6">
 
             {/* Video Background */}
-            {/*   <video
+            <video
                 className="absolute top-0 left-0 w-full h-full object-cover"
                 autoPlay
                 loop
@@ -17,7 +17,7 @@ export default function HomePage()
             >
                 <source src={shrekVideo} type="video/mp4" />
                 Your browser does not support the video tag.
-            </video> */}
+            </video>
 
             {/* Overlay to improve text readability */}
             <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
