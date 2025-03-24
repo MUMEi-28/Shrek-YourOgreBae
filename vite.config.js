@@ -3,14 +3,12 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import dotenv from 'dotenv'
 
+dotenv.config(); // Load .env file
 
-// https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(),
-  tailwindcss(),
-  ],
+  plugins: [react(), tailwindcss()],
   base: "/Shrek-YourOgreBae",
   define: {
-    'process.env.VITE_HF_ACCESS_TOKEN': JSON.stringify(import.meta.env.VITE_HF_ACCESS_TOKEN),
+    'import.meta.env.VITE_HF_ACCESS_TOKEN': JSON.stringify(process.env.VITE_HF_ACCESS_TOKEN),
   }
 })
