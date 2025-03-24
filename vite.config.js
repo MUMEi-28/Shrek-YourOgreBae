@@ -8,8 +8,5 @@ export default defineConfig({
   plugins: [react(),
   tailwindcss(),
   ],
-  base: "/Shrek-YourOgreBae",
-  define: {
-    'process.env.VITE_HF_ACCESS_TOKEN': JSON.stringify(process.env.VITE_HF_ACCESS_TOKEN)
-  }
+  base: process.env.VITE_BASE_PATH || "/Shrek-YourOgreBae",
 })
