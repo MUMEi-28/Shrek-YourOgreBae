@@ -1,6 +1,7 @@
 import { HfInference } from '@huggingface/inference'
 
-const hf = new HfInference(import.meta.env.VITE_HF_ACCESS_TOKEN);
+/* const hf = new HfInference(import.meta.env.VITE_HF_ACCESS_TOKEN);
+ */const hf = new HfInference(import.meta.env.VITE_APP_AI);
 
 export async function getResponseFromMistral(userMessage, characterName, loveInterest)
 {
