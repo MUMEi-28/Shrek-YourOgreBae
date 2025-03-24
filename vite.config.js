@@ -8,5 +8,5 @@ export default defineConfig({
   plugins: [react(),
   tailwindcss(),
   ],
-  base: "/Shrek-YourOgreBae",
+  base: "./",
 })
