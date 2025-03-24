@@ -12,16 +12,17 @@ Shrek-YourOgreBae is an interactive and chaotic AI chatbot experience inspired b
 
 ## 🛠️ Tech Stack
 - **React JS** – For building the front-end interface.
-  <details>
-  <summary>- **Vite** - For fast development and optimized builds  </summary>
-  Faster than Donkey running from Dragon 🏃‍♂️💨
-  </details>
+
 - **Tailwind CSS** – For modern and responsive styling.
 - **Hugging Face API (Mistral Model)** – For chatbot responses.
 - **GPT** – Used to generate fun, weird, and ridiculous messages.
 - **GitHub Copilot** – For AI-assisted code suggestions and enhancements.  
 - **DeepSeek** – Used for additional AI-powered interactions and logic.  
 - **Bing AI** – Assisted with stuffs, content generation and making this README sound smarter.
+- <details>
+  <summary> **Vite** - For fast development and optimized builds  </summary>
+  Faster than Donkey running from Dragon 🏃‍♂️💨
+  </details>
 <details>
   <summary>𓁹‿𓁹</summary>
   <p>vibe coding fr</p>
