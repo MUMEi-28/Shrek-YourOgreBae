@@ -18,14 +18,14 @@
 body,
 footer
 {
-    cursor: url('/public/Shrek--pointer--SweezyCursors.png'), auto;
+    cursor: url('/Shrek--pointer--SweezyCursors.png'), auto;
 }
 
 button,
 a,
 .custom-cursor
 {
-    cursor: url('/public/Shrek--cursor--SweezyCursors.png'), pointer;
+    cursor: url('/Shrek--cursor--SweezyCursors.png'), pointer;
 }
 
 span.lost::before
