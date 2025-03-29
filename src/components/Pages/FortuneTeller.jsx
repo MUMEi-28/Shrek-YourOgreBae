@@ -8,7 +8,7 @@ export default function ShrekFortuneTeller()
     const [fortune, setFortune] = useState('');
     const [isPredicting, setIsPredicting] = useState(false);
 
-    const characters = ["Shrek", "Donkey", "Fiona", "Puss in Boots", "Lord Farquaad", "Dragon"];
+    const characters = ["Shrek", "Donkey", "Fiona", "Puss in Boots", "Kitty Softpaws", "Pinocchio", "King Harold"];
 
     const handleSelectCharacter = (character) =>
     {

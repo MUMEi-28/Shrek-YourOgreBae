@@ -67,7 +67,7 @@ export default function Minigame()
                 <div className="w-full max-w-lg bg-[#A8E6A8] rounded-md text-center p-4 shadow-lg border border-[#4CAF50]">
                     <header className='p-3'>
                         <h1 className='text-2xl font-mono text-[#2E7D32] my-3'>Hangman: Swamp Edition</h1>
-                        <p className='text-[#1B5E20]'>Guess the word in under 9 attempts to keep Shrek happy!</p>
+                        <p className='text-[#1B5E20]'>Guess fairytale words before Shrek loses his temper</p>
                     </header>
                     {!isGameOver && wrongGuessCount === 0 ? (
                         <section className="bg-[#C8E6C9] p-2 mt-4 mb-9 rounded-md">

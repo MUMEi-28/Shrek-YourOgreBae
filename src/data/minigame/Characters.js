@@ -1,53 +1,50 @@
 const words = [
     {
         name: "Shrek",
-        backgroundColor: "#228B22", // Swamp Green (Ogre's Home)
-        color: "#FFFFFF", // White (Hidden Soft Side)
+        backgroundColor: "#228B22",
+        color: "#FFFFFF",
     },
     {
         name: "Fiona",
-        backgroundColor: "#FF69B4", // Hot Pink (True Love & Strength)
-        color: "#FFFFFF", // White (Elegance)
+        backgroundColor: "#FF69B4",
+        color: "#FFFFFF",
     },
     {
         name: "Donkey",
-        backgroundColor: "#A9A9A9", // Dark Gray (Donkey's Fur)
-        color: "#FFFFFF", // White (Loyal & Funny)
+        backgroundColor: "#A9A9A9",
+        color: "#FFFFFF",
     },
     {
         name: "Puss in Boots",
-        backgroundColor: "#FFA500", // Fiery Orange (Puss' Fur)
-        color: "#FFFFFF", // White (Heroic & Charming)
+        backgroundColor: "#FFA500",
+        color: "#FFFFFF",
     },
     {
         name: "Kitty Softpaws",
-        backgroundColor: "#000000", // Black (Mysterious & Stealthy)
-        color: "#FFFFFF", // White (Clever & Elegant)
+        backgroundColor: "#000000",
+        color: "#FFFFFF",
     },
     {
         name: "Gingy",
-        backgroundColor: "#D2691E", // Gingerbread Brown (His Cookie Body)
-        color: "#FFFFFF", // White (Frosting & Sweetness)
+        backgroundColor: "#D2691E",
+        color: "#FFFFFF",
     },
 
     {
         name: "Suzy Sugarplum",
-        backgroundColor: "#FFB6C1", // Light Pink (Sweetness & Fairy Tale Magic)
-        color: "#FFFFFF", // White (Her Innocent & Cute Vibe)
+        backgroundColor: "#FFB6C1",
+        color: "#FFFFFF",
     },
     {
         name: "Dragon",
-        backgroundColor: "#B22222", // Firebrick Red (Fiery & Protective)
-        color: "#FFFFFF", // White (Her Gentle Side)
+        backgroundColor: "#B22222",
+        color: "#FFFFFF",
     },
     {
         name: "Doris",
-        backgroundColor: "#800080", // Purple (Bold & Sassy)
-        color: "#FFFFFF", // White (Her Confidence & Charm)
+        backgroundColor: "#800080",
+        color: "#FFFFFF",
     }
 ];
 
 export default words;
-
-
-// AI GENERATED OFC, USING API IS TOO EXPENSIVE );
