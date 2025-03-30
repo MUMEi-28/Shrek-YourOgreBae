@@ -13,8 +13,6 @@ function App()
 {
     return (
         <>
-            {/*             <CharacterCard />
- */}
             <Routes>
                 <Route path='/' element={<HomePage />} ></Route>
                 <Route path='/chat' element={<Chat />} ></Route>

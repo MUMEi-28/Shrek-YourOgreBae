@@ -49,8 +49,6 @@ export default function Characters()
 
     return (
         <>
-            {/*   {selectedCharacter ? <CharacterCard />} */}
-
             <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-purple-900 to-pink-900 p-6">
                 <h1 className="text-4xl font-bold mb-8 text-yellow-300 drop-shadow-lg animate-pulse">
                     Choose Your Character 💖
