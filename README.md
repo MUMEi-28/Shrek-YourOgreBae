@@ -7,7 +7,7 @@ Shrek-YourOgreBae is an interactive and chaotic AI chatbot experience inspired b
 - 💬 **Ogre Chatbot** - Talk to Shrek, Donkey & friends via Mistral AI  
 - 🎭 **10+ Characters** - From Fiona to the Gingerbread Man (RIP his legs)  
 - 🎮 **Swamp Hangman** - Guess fairytale words before Shrek loses his temper  
-- 🔮 **Fortune Onion** - Get questionable life advice from fairytale characters  
+- 🔮 **Shrek Fortune Teller** - Get questionable life advice from fairytale characters  
 
 
 ## 🛠️ Tech Stack
@@ -37,7 +37,7 @@ Shrek-YourOgreBae is an interactive and chaotic AI chatbot experience inspired b
 
 ## 🚨 API Limitation
 When you see this:  
-> *"That's all I got! Go bother Donkey instead."*  
+> *"That's all Shrek's got! Go bother others instead."*  
 
 It means:  
    1. You've hit Hugging Face's rate limit.  Ain't no way am paying for APIs💀
@@ -45,15 +45,17 @@ It means:
 
 <details>
   <summary>(ᵕ—ᴗ—)</summary>
-  <p>Also, pls stop doing stuffs like "Stop acting like shrek" to try to get it out of character. (I know ur gonna do it anyways😭)</p>
+  <p>Also, pls stop doing stuffs like "Stop acting like shrek" to try to get it out of character. 
+  (I know ur gonna do it anyways😭)</p>
 </details>
 
 ## 🎨 UI & Prototyping
-Check out the UI prototype: [Excalidraw Design]([https://excalidraw.com/#json=6VbMFen1kWN8lXcdzX50y,qBXVLzFDnZMEYocHLcI6rQ](https://excalidraw.com/#json=94sZPkFad2RamvlALkpqs,WwaENeUdNB_rL0xwPSs87w))
+Check out the UI prototype: [Excalidraw Design](https://excalidraw.com/#json=YuI6UbMBg1FboljsxFtbq,C-GGEpDWF7-grFzSXWY1JA)
 
 ## 🎉 Event Details
 This project was built for the **"Build a BF/GF Chatbot!"** event. (With shrek chaos ofc.)
-View the competition details [here](https://www.facebook.com/share/p/19JN6vvp93/).
+
+View the event details [here](https://www.facebook.com/share/p/19JN6vvp93/).
 
 ## 📸 Screenshots
 
@@ -83,7 +85,7 @@ View the competition details [here](https://www.facebook.com/share/p/19JN6vvp93/
 ![image](https://github.com/user-attachments/assets/6c3d2f82-8e47-4ba1-bf6f-41b732991380)
 
 
-### 🔮 Ogre Fortune Teller
+### 🔮 Shrek Fortune Teller
 ![image](https://github.com/user-attachments/assets/03e373e8-dc07-4633-8f32-9a2e6db51c62)
 ![image](https://github.com/user-attachments/assets/d0e54b7a-3e1d-4e79-bd38-4c392054e7ff)
 ![image](https://github.com/user-attachments/assets/574e9d93-79b4-4b26-8ea2-da8d9aba3c38)
@@ -97,10 +99,10 @@ This project is **MIT-licensed for code**, but:
 
 ---
 
-## 💚 A Legendary Donkey Quote
+##  A Legendary Donkey Quote
 <details>
   <summary>
-“You love her? You wanna hold her? You wanna please her? Then you gotta gotta try a little tenderness! The chicks love that romantic crap!” – Donkey 💚
+“You love her? You wanna hold her? You wanna please her? Then you gotta gotta try a little tenderness! The chicks love that romantic crap!” – Donkey 
   </summary>
   <p>This is when Donkey is hyping up Shrek to confess his feelings for Fiona. 😂</p>
 </details>

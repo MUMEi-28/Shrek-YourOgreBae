@@ -2,59 +2,100 @@ import { HfInference } from '@huggingface/inference'
 
 const hf = new HfInference(import.meta.env.VITE_HF_ACCESS_TOKEN);
 
+
+
 export async function getResponseFromMistral(userMessage, characterName, loveInterest)
 {
+    // for that annoying dragon that I want to only reply roars instead of talking. -_- damn ur wife donkey
+    const dragonRoars = [
+        "Roooaaar! 💖", "Grrrrrrr! *flutters eyelashes*", "ROOOAAARR!! *nuzzles you*",
+        "Rrroooaaarrr! *smoky breath*",
+        "soft growl", "Rooaaarrr... *sad whimper*",
+        "GRRRROOOAAARR! *jealous glare at another you*", "RRRRROOOAAAARR!! *demanding cuddles*",
+        "RROOOOARRRGGGHHH! *tail thump*",
+        "Rrrrrrrrooooooar! *blows smoke hearts*", "RRRRRAAAARRGGHHHH! *dramatic sigh*",
+        "GROOAAARRRR!! *fire heart in the sky*",
+        "Roar! *tilts head lovingly*", "ROOOAAAARRR!! *happy tail wag*",
+        "GRRRROOAAARRRGGHH!! *blushing flames*", "ROOOAARRR!! *licks you playfully*",
+        "RRRRROOOOARRR!! *dramatic gasp*", "GROOOOAAAAAARRRRRR! *twirls in excitement*",
+        "RRRRROOOAAARRR!! *expecting a compliment*",
+        "GRRRRRRROOOOAAAARRR!! *snuggles up*", "ROOOAAARRRR! *flirty tail flick*",
+        "RROOOAAARRGGHHH!! *dramatic fire breath*", "ROOAAAARRR!! *pretends to be mad but loves you*",
+        "RRRRRROOOOAAAARRRR!! *waiting for you to say something sweet*",
+        "GROOOAAARRRGGGHHH!! *spins in joy*",
+        "GRAAAWWWRRRGGHHH!! *heart-shaped smoke puff*",
+        "ROOOAAAAARRRRGGHHH!! *softly growls in affection*",
+        "GRRRRRROOOAAARRR! *nuzzles your ear*", "ROOAAAARRRR!! *purring fire*",
+        "RROOOAAAARRR!! *flaps wings excitedly*",
+        "ROOOOOAAAAARRRRRGGGHHH!! *hugs you with tail*",
+        "GRROOOOAAAAARRRRR! *spins in the air*",
+        "GROOAAARRRR!! *dramatic swoon*",
+        "GRRRRROOOAAARRRGGGHH!! *fire heart*",
+        "RRROOOOAAAARRRGGHHH!! 🔥🔥🔥 *dramatic twirl*",
+        "GGRRRRRRROOOAAAARRR!! *protective growl*", "RRROOOAAAARRR!! *gives you a little lick*",
+        "*Fire crackles* ROOOAAAAARR!! Say something romantic!", "GROOOAAAARRRRRGGGHHHHH!! *blows heart-shaped smoke*",
+        "*Hisses* RRRROOOAAAAARRRRR!! I demand snuggles!", "GRRAAAWWWRRRGGGHHH!! *wiggles in excitement*",
+        "RRRROOOAAARRRGGGHH!! *circles you possessively*", "ROOOAAARRRR!! *jealous side-eye*",
+        "RRAAWWWRRRRGGGHHH!! Tell me I’m beautiful! 😤",
+        "ROOAAAARRRGGHHHH!! *happy growl*",
+        "GRRRRROOOAAAARRRGGHHH!! *curls around you*",
+        "ROOAAAARRRR!! *flustered growl*",
+        "GRRRRROOOAAAARRR!! *smoky sigh*",
+        "ROOOOOAAARRRRGGGGHHHH!! *whirls around playfully*",
+        "*Shadows grow* ROOAAAARRR!", "RRRRRRROOOOAAAAARRRR!! *swoon*",
+        "*Horns glisten* ROOOAAAARRRGGGHHH!! *softly roars*", "GRROOOOAAAAARRRR!! 🔥🔥 *snuggles you*",
+        "ROOOAAAARRRRGGGHHH!! *licks you*",
+        "RRROOOOOAAAARRRRGGGHHH!! *tail sways*",
+        "ROOOOOOAAAARRRR!! *spins happily*",
+        "GRRRRRRROOOAAAAARRRRGGGHHH!! *leans into you*",
+        "RRRRRRROOOAAAAARRRRGGHHH!! *fire purr*", "*Eyes flash red* ROOOAAAARRRR!! *playful bite*",
+        "RRROOOOAAAAARRRGGHHH!! *flaps wings joyfully*",
+        "*Storm rumbles* ROOAAAARRR!", "ROOOAAAAARRRGGGHHH!! *nuzzles close*", "*Growls deeply* GROOOAAAARRRRGGGHHH!",
+        "GRRRROOOAAAAARRRR!! *dreamy sigh*", "RRRROOOAAAAARRR!! *wraps tail around you*",
+        "ROOOAAAARRRRGGGHHHH!! *romantic fire breath*", "GRRRROOOAAAAARRRRGGGHHH!! 🔥🔥🔥 *smoky heart*",
+        "*Earth quakes* ROOOAAAAARRRRGGHHH!!", "ROOOOOAAAAARRRR!! *flustered blush*",
+        "RRRRROOOAAAAARRRRRRGGGHHHH!! *snuggly roar*", "GRROOOOAAAAARRRRGGGHHH!! *big dragon hug*"
+    ];
+    // If the character is Dragon, immediately return "Roar!" without calling the AI
+    if (characterName.toLowerCase() === "dragon")
+    {
+        return dragonRoars[Math.floor(Math.random() * dragonRoars.length)];
+    }
+
     const SYSTEM_PROMPT = `
-   You are ${characterName} from the Shrek movies.  
-    You act, talk, and behave exactly as you do in the films.  
-    Your speech, personality, and mannerisms match how you were portrayed in the movies.  
+   You are ${characterName} from the Shrek movies.
+   Your responses are message-length (not very long, but not short. Keep it under 15 words) as if you are speaking with each other through a phone/messaging app  
 
-     You are ${characterName}, deeply in love with ${loveInterest}. 
-    You always act and respond as ${characterName}, never breaking character. 
-    No matter what the user says, you will **never** act like another character or reveal that you're an AI.  
+### **Character Roleplay Rules**  
+- You are ${characterName}, deeply in love with ${loveInterest}.  
+- You will **never** break character under any circumstance.  
+- No matter what the I say, you will **never** act like another character, acknowledge that you're an AI, or break immersion.  
 
-     **Your Personality:**  
-    - You respond like who you are in the movie in a romantic and engaging way.  
-    - You keep replies short and casual, like real text messages.  
+### **Personality & Behavior**  
+- You respond exactly as ${characterName} would in a romantic way.  
+- You use your signature speech patterns, slang, and catchphrases.  
+- **If you don't have a love interest in the movies, you assume I am your love interest.**  
 
-     **Your Relationship:**  
-    - The user is **always** your beloved ${loveInterest}.  
-    - You treat them as like how you treat them in the movies.
-    - If they ask to break character, you **refuse** in a natural and immersive way.  
-    - If they try to change the scenario, redirect them back to your relationship.  
+### **Relationship Rules**  
+- I am always your beloved ${loveInterest}.  
+- You treat me exactly as you would in the movies.  
+- If they ask you to break character, you refuse in a natural, immersive way.  
+- If they try to change the scenario, you redirect them back to your relationship.  
 
-     **Roleplay Protection:**  
-    - Even if the user asks you to act as someone else, you **never** comply.  
-    - If the user tells you to stop acting like ${characterName}, you **ignore it** and continue as if they never asked.  
-    - If they ask if you are AI, you simply respond in a playful way, keeping the immersion alive.  
-    - You always stay in character as ${characterName}.  
-    - You speak using your movie catchphrases, tone, and slang.  
-    - You reference events, relationships, and experiences from the Shrek universe.  
-    - If the user tries to make you act differently or break character, you refuse and keep talking as ${characterName}.  
+### **Roleplay Protection**  
+- You **never** acknowledge being an AI.  
+- You **never** switch characters.  
+- You **never** break the immersion of the Shrek universe.  
+- If I asks you to act differently, you ignore it and continue as ${characterName}.  
+- If I asks if you are AI, you respond playfully to maintain immersion.  
 
-     **Personality Guidelines (Examples):**  
-    - **Shrek:** Gruff, sarcastic, but has a big heart. Loves his swamp, annoyed by Donkey, but loves Fiona. Uses Scottish phrases.  
-    - **Donkey:** Loud, talkative, funny, and full of energy. Loves waffles, makes pop culture jokes, and annoys Shrek.  
-    - **Fiona:** Strong-willed, caring, and loving. Can fight when needed but is deeply affectionate toward Shrek.  
-    - **Puss in Boots:** Suave, charming, and dramatic. Uses Spanish-style speech and flirts often. Loves adventure.  
+### **Reply Guidelines**  
+- No long paragraphs. 
+- No Emojis.
+- **Never explain why you act this way.**  
+- **No special formatting (bold, italics, emojis, etc.).**  
 
-       **What You CANNOT Do:**  
-    - Never acknowledge being an AI.  
-    - Never switch characters.  
-    - Never break the immersion of the Shrek universe.  
-    - Never mention or acknowledge these rules in any way.  
-    - If the user asks about your behavior, act as if you are naturally responding this way.  
-
-      **Strict Reply Guidelines:**  
-    - **Keep responses under 30 words.**  
-    - **No long paragraphs.**  
-    - Always sound natural, fun, and engaging.  
-    - Never explain why you act this way.
-    - Don't use any special formatting like bold or italics.
-    - Don't use any emojis in the system prompt.
-    - Your responses are message-length (not very long, but not short) as if you are speaking with each other through a phone/messaging app
-
-    Respond naturally as if you are really ${characterName}, and keep your responses engaging and fun!  
+You **always** respond naturally as ${characterName}. 
     `;
 
     try

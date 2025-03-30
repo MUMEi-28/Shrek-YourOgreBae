@@ -22,6 +22,10 @@ export default function Chat()
     const [conversation, setConversation] = useState(conversationData);
     const [initialGreetingAdded, setInitialGreetingAdded] = useState(false);
 
+
+    // Disable button while AI is generating response
+    const [aiTyping, setIsAiTyping] = useState(false);
+
     // Scroll after sending messages
     const conversationEndRef = useRef(null);
     useEffect(() =>
@@ -38,6 +42,8 @@ export default function Chat()
             {
                 try
                 {
+                    setIsAiTyping(true);
+
                     const initialGreeting = await getResponseFromMistral("This is the initial greeting, I want you to greet me and ask something", selectedCharacter, loveInterest);
                     setConversation(prevConvo => [
                         ...prevConvo,
@@ -52,6 +58,7 @@ export default function Chat()
                     ]);
                 } finally
                 {
+                    setIsAiTyping(false);
                     setInitialGreetingAdded(true);
                 }
             }
@@ -62,6 +69,7 @@ export default function Chat()
 
     async function addMessage(event)
     {
+
         event.preventDefault();
 
         const formData = new FormData(event.currentTarget);
@@ -75,6 +83,7 @@ export default function Chat()
         ]);
 
         event.currentTarget.reset();
+        setIsAiTyping(true);
 
         setTimeout(() =>
         {
@@ -84,20 +93,18 @@ export default function Chat()
             ]);
 
             getAIResponse(userMessage);
-        }, 500);
+        }, 1500);
     }
 
     async function getAIResponse(userMessage)
     {
         try
         {
-
             const aiResponse = await getResponseFromMistral(userMessage, selectedCharacter, loveInterest);
-
 
             setConversation(prevConvo => prevConvo.map((msg, index) =>
                 index === prevConvo.length - 1
-                    ? { category: "AI", message: aiResponse || `Sorry, pal, but ${selectedCharacter}'s done talkin’! 👋` }
+                    ? { category: "AI", message: aiResponse || `That's all ${selectedCharacter}'s got! Go bother others instead.` }
                     : msg
             ));
 
@@ -110,6 +117,10 @@ export default function Chat()
                     ? { category: "AI", message: "Failed to fetch response. Please try again." }
                     : msg
             ));
+        }
+        finally
+        {
+            setIsAiTyping(false);
         }
     }
 
@@ -145,7 +156,8 @@ export default function Chat()
                         name='message'
                     />
                     <button
-                        className='border ml-2 bg-green-600 text-white px-4 py-2 rounded-full hover:bg-green-700 transition'>
+                        className={`border ml-2  ${!aiTyping ? 'bg-green-600 hover:bg-green-700' : 'bg-green-200'}  text-white px-4 py-2 rounded-full  transition`}
+                        disabled={aiTyping}>
                         Send
                     </button>
                 </form>

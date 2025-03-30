@@ -17,7 +17,7 @@ const characterData = [
     },
     {
         name: "Donkey",
-        title: "The Noble Steed  (Self-proclaimed nickname)",
+        title: "The Noble Steed  (Self-proclaimed)",
         personality: "Energetic and talkative",
         loveInterest: "Dragon",
         quote: "You’re a girl dragon! Oh, sure, I mean… of course you’re a girl dragon.",
@@ -83,7 +83,7 @@ const characterData = [
         name: "Doris",
         title: "The Ugly Stepsister with Attitude -_-",
         personality: "Sassy and bold",
-        loveInterest: "U. YIEEEEEE (⸝⸝⸝>﹏<⸝⸝⸝)",
+        loveInterest: "No one",
         quote: "Hey, handsome.",
         image: "/doris.jpg",
     },
